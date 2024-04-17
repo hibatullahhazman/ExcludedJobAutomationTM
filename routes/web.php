@@ -22,12 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::middleware(['basicauth'])->group(function () {
-    //All the routes are placed in here
-    //Route::get('/', [loginController::class, 'show'])->name('login');
-    Route::get('/test',[MainController::class,'test']);
-});*/
-
 Route::get('/login', [loginController::class, 'show'])->name('login');
 Route::post('/login',[loginController::class,'handle'])->name('login.submit');
 Route::post('/logout',[loginController::class,'logout'])->name('logout');
@@ -41,6 +35,6 @@ Route::get('tambah/{nrproc}',[MainController::class,'store']);
 Route::get('/search',[MainController::class,'search']);
 
 
-Route::get('/aktiviti', [AktivitiController::class, 'index']);
+Route::get('/logs', [AktivitiController::class, 'index']);
 
 

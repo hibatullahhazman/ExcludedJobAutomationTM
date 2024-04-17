@@ -21,19 +21,20 @@
         <td>{{ $per->id }}</td>
         <td>{{ $per->user }}</td>
         <td>{{ $per->nrproc }}</td>
-        <td>
+        <td><i>
           @if($per->activity_code == 1)
           Insert 
           @else
           Delete
           @endif
+        </i>
         </td>
         <td>{{ date('d M Y', strtotime($per->created_at)); }}</td>
         <td>
           @if($per->status == 0)
           Gagal
           @else
-          Berjaya
+          OK!
           @endif
         </td>
       </tr>

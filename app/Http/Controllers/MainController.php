@@ -61,7 +61,7 @@ class MainController extends Controller
                             //Cipta rekod logs bagi aktiviti yang dijalankan
                             $status = 1; //status pemprosesan = 0 - Failed : 1 - Succeed
                             $user = session('name'); //retrieved user->name from auth.session
-                            $code = '1'; //activity-code = "Delete"
+                            $code = '1'; //activity-code = "Delete : 0" && "Insert : 1"
                     
                             $record = new aktiviti;
                             $record->user = $user;
@@ -75,7 +75,7 @@ class MainController extends Controller
                             session()->flash('success', 'Cap Dagangan '.$nrproc.' telah berjaya ditambahkan!');
                             return redirect()->back();                     
                     } catch (\Throwable $th) {
-                        return back()->with('warning','Telah pun wujud dalam senarai!');
+                        return back()->with('warning','Amaran: '.$nrproc.' telah pun wujud dalam senarai!');
                     }
                  
                 }
@@ -125,7 +125,25 @@ class MainController extends Controller
                     </table>';
             }
             else{
-                $output .='Nombor Pemfailan tidak wujud dalam pangkalan data!';
+                $output ='
+                    <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">IDProc</th>
+                        <th scope="col">Application No</th>
+                        <th scope="col">Denomination</th>
+                        <th scope="col">Tindakan</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                            <th scope="row"></th>
+                            <td colspan="4" style="background-color:orange;"><b>Maaf, tiada sebarang rekod untuk nombor pemfailan ini!</b></td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                    </tbody>
+                    </table>';
             }
             return $output;
 
