@@ -20,7 +20,7 @@ class MainController extends Controller
         if(session()->has('login')){
         //check data
         $list = excludelist::with('markinfo','definition')
-        ->select('excludeautomation.idproc','excludeautomation.nrproc','mark.denomark','mark.ctryorigin','bbastatusclassif.description')
+        ->select('excludeautomation.idproc','excludeautomation.nrproc','mark.denomark','mark.ctryorigin','bbastatusclassif.description','ptoprocedure.tooltips')
         //->with('bibliomark')
         ->join('procedures.ptoprocedure','ptoprocedure.idproc','=','excludeautomation.idproc')
         //->get();
@@ -50,27 +50,34 @@ class MainController extends Controller
               ->where('nrproc',$nrproc)->first();
 
                 if($query){
-                 $tambah = new excludelist();
-                 $tambah->nrproc = $nrproc;
-                 $tambah->idproc = $query->idproc;
-                 $tambah->save();
 
-                 //Cipta rekod logs bagi aktiviti yang dijalankan
-                 $status = 1; //status pemprosesan = 0 - Failed : 1 - Succeed
-                 $user = session('name'); //retrieved user->name from auth.session
-                 $code = '1'; //activity-code = "Delete"
-         
-                 $record = new aktiviti;
-                 $record->user = $user;
-                 $record->activity_code = $code;
-                 $record->status = $status;
-                 $record->nrproc = $nrproc;
-         
-                 $record->save(); //inserting the information into the existing table ('aktiviti')
-                //tamat di sini
+                    try {
+                        //code...
+                            $tambah = new excludelist();
+                            $tambah->nrproc = $nrproc;
+                            $tambah->idproc = $query->idproc;
+                            $tambah->save();
 
-                 session()->flash('success', 'Cap Dagangan '.$nrproc.' telah berjaya ditambahkan!');
-                 return redirect()->back();
+                            //Cipta rekod logs bagi aktiviti yang dijalankan
+                            $status = 1; //status pemprosesan = 0 - Failed : 1 - Succeed
+                            $user = session('name'); //retrieved user->name from auth.session
+                            $code = '1'; //activity-code = "Delete"
+                    
+                            $record = new aktiviti;
+                            $record->user = $user;
+                            $record->activity_code = $code;
+                            $record->status = $status;
+                            $record->nrproc = $nrproc;
+                
+                            $record->save(); //inserting the information into the existing table ('aktiviti')
+                            //tamat di sini
+
+                            session()->flash('success', 'Cap Dagangan '.$nrproc.' telah berjaya ditambahkan!');
+                            return redirect()->back();                     
+                    } catch (\Throwable $th) {
+                        return back()->with('warning','Telah pun wujud dalam senarai!');
+                    }
+                 
                 }
 
             }

@@ -29,34 +29,32 @@
         @foreach($list as $per)
       <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $per->nrproc }}
- <!--         <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <td>
+  
+          <a href="#" class="show_user_details" data-bs-toggle="modal" data-bs-target="#UserDetailsModal" data-tooltips="{{ $per->tooltips }}">
                     {{ $per->nrproc }}
-          </a>-->
-        
+          </a>
+
+
         <!-- Modal -->
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        {{ $per->nrproc}}
-        {{ $per->dtfilling}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
-        
-        
+        <div class="modal fade" id="UserDetailsModal" tabindex="-1" aria-labelledby="UserDetailsModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="UserDetailsModalLabel">{{__('Maklumat Cap Dagangan')}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p><span class="tooltips"></span></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
         </td>
+
         <td>{{ $per->denomark }}</td>
         <td>
             @if($per->ctryorigin == 'MY')

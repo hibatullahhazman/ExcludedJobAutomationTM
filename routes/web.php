@@ -32,10 +32,6 @@ Route::get('/login', [loginController::class, 'show'])->name('login');
 Route::post('/login',[loginController::class,'handle'])->name('login.submit');
 Route::post('/logout',[loginController::class,'logout'])->name('logout');
 
-Route::get('/test',[MainController::class,'test']);
-Route::get('/test2',[MainController::class,'test2']);
-
-
 //Auth::routes();
 Route::get('/home',[MainController::class,'index']);
 Route::get('delete/{nrproc}', [MainController::class, 'destroy']);
