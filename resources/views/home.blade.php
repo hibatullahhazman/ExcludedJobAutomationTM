@@ -14,11 +14,11 @@
   <thead>
       <tr>
         <th> # </th>
-        <th>No. Cap Dagangan</th>
-        <th>Denominasi</th>
-        <th>Jenis Permohonan</th>
+        <th>Application Number</th>
+        <th>Denomination</th>
+        <th>Applicant/Owner</th>
         <th>Status</th>
-        <th>Tindakan</th>
+        <th>Action</th>
       </tr>
   </thead>
   <tbody>
@@ -41,7 +41,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="UserDetailsModalLabel">{{__('Maklumat Cap Dagangan')}}</h5>
+                <h5 class="modal-title" id="UserDetailsModalLabel">{{__('TM Application Information')}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -57,17 +57,11 @@
 
         <td>{{ $per->denomark }}</td>
         <td>
-            @if($per->ctryorigin == 'MY')
-            Tempatan
-            @elseif($per->ctryorigin == NULL)
-            -
-            @else
-            Antarabangsa
-            @endif
+            <sup>Will be updated soon.</sup>
         </td>
         <td>{{ $per->description }}</td>
         <td>
-            <a href="{{ url('delete/'.$per->nrproc) }}" onclick="return confirm('Sila tekan OK untuk teruskan?');"><i class="fa fa-trash" aria-hidden="true"></i>Padam</a>
+            <a href="{{ url('delete/'.$per->nrproc) }}" onclick="return confirm('Are you sure to removed it?');"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
         </td>
       </tr>
         @endforeach
@@ -78,4 +72,4 @@
 </div>
 @endsection
 
-@section('heading','Rekod Aplikasi Cap Dagangan yang dikecualikan Job secara Automasi')
+@section('heading','Excluded Job Automation of TM Applications Record')

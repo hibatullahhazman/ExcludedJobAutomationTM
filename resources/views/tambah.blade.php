@@ -18,7 +18,7 @@
 <form action="/tambah" method="GET" role="search">
   @csrf
 <div class="input-group">
-  <input type="text" name="search" id="search" placeholder="Masukkan nombor pemfailan Cap Dagangan" class="form-control" @error('search') is-Invalid @enderror onfocus="this.value=''">                            
+  <input type="text" name="search" id="search" placeholder="Please insert the TM Application number!" class="form-control" @error('search') is-Invalid @enderror onfocus="this.value=''">                            
 </span>
 </div>
 </form>
@@ -66,4 +66,4 @@ $(document).ready(function() {
 
 @endsection
 
-@section('heading','Tambah Rekod Baru')
+@section('heading','Add New Record')

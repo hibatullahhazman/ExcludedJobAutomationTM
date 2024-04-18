@@ -47,4 +47,4 @@
 </div>
 @endsection
 
-@section('heading','Rekod Aktiviti yang telah dijalankan')
+@section('heading','History')

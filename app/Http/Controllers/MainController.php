@@ -138,7 +138,7 @@ class MainController extends Controller
                     <tbody>
                             <tr>
                             <th scope="row"></th>
-                            <td colspan="4" style="background-color:orange;"><b>Maaf, tiada sebarang rekod untuk nombor pemfailan ini!</b></td>
+                            <td colspan="4" style="background-color:orange;"><b>Sorry, no results found!</b></td>
                             <td></td>
                             <td></td>
                             </tr>
