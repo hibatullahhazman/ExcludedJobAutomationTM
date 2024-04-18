@@ -95,8 +95,8 @@ return [
 
         'oracle' => [
             'driver' => 'oracle',
-            'host' => env('DB_HOST2', '172.16.0.88'),
-            'port' => env('DB_PORT2', '1521'),
+            'host' => env('DB_HOST3', '172.16.0.88'),
+            'port' => env('DB_PORT3', '1521'),
             'database' => env('DB_DATABASE6', 'WORKFLOW'),
             'username' => env('DB_USERNAME6', 'PTO_ADM'),
             'password' => env('DB_PASSWORD6', 'PTO_ADM'),
@@ -107,11 +107,11 @@ return [
 
         'oracle2' => [
             'driver' => 'oracle',
-            'host' => env('DB_HOST2', '172.16.0.88'),
+            'host' => env('DB_HOST2', '172.16.0.196'),
             'port' => env('DB_PORT2', '1521'),
             'database' => env('DB_DATABASE2', 'BIBLIOALL'),
-            'username' => env('DB_USERNAME2', 'PTO_ADM'),
-            'password' => env('DB_PASSWORD2', 'PTO_ADM'),
+            'username' => env('DB_USERNAME2', 'PTO_IT'),
+            'password' => env('DB_PASSWORD2', 'PTO_IT'),
             'service_name' => env('DB_SERVICE_NAME', 'myipo'),
             'charset' => 'AL32UTF8',
             'prefix' => '',
@@ -119,11 +119,11 @@ return [
 
         'oracle3' => [
             'driver' => 'oracle',
-            'host' => env('DB_HOST2', '172.16.0.88'),
+            'host' => env('DB_HOST2', '172.16.0.196'),
             'port' => env('DB_PORT2', '1521'),
             'database' => env('DB_DATABASE3', 'PROCEDURES'),
-            'username' => env('DB_USERNAME3', 'PTO_ADM'),
-            'password' => env('DB_PASSWORD3', 'PTO_ADM'),
+            'username' => env('DB_USERNAME3', 'PTO_IT'),
+            'password' => env('DB_PASSWORD3', 'PTO_IT'),
             'service_name' => env('DB_SERVICE_NAME', 'myipo'),
             'charset' => 'AL32UTF8',
             'prefix' => '',
@@ -131,11 +131,11 @@ return [
 
         'oracle4' => [
             'driver' => 'oracle',
-            'host' => env('DB_HOST2', '172.16.0.88'),
+            'host' => env('DB_HOST2', '172.16.0.196'),
             'port' => env('DB_PORT2', '1521'),
             'database' => env('DB_DATABASE4', 'BIBLIOMARK'),
-            'username' => env('DB_USERNAME4', 'PTO_ADM'),
-            'password' => env('DB_PASSWORD4', 'PTO_ADM'),
+            'username' => env('DB_USERNAME4', 'PTO_IT'),
+            'password' => env('DB_PASSWORD4', 'PTO_IT'),
             'service_name' => env('DB_SERVICE_NAME', 'myipo'),
             'charset' => 'AL32UTF8',
             'prefix' => '',
@@ -143,11 +143,11 @@ return [
 
         'oracle5' => [
             'driver' => 'oracle',
-            'host' => env('DB_HOST2', '172.16.0.88'),
+            'host' => env('DB_HOST2', '172.16.0.196'),
             'port' => env('DB_PORT2', '1521'),
             'database' => env('DB_DATABASE5', 'DEFINITIONS'),
-            'username' => env('DB_USERNAME5', 'PTO_ADM'),
-            'password' => env('DB_PASSWORD5', 'PTO_ADM'),
+            'username' => env('DB_USERNAME5', 'PTO_IT'),
+            'password' => env('DB_PASSWORD5', 'PTO_IT'),
             'service_name' => env('DB_SERVICE_NAME', 'myipo'),
             'charset' => 'AL32UTF8',
             'prefix' => '',

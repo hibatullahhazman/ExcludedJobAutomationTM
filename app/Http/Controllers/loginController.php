@@ -9,6 +9,8 @@ use Symfony\Component\Console\Input\Input;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\MainController;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\DB;
+use Exception;
 
 class loginController extends Controller
 {
@@ -28,13 +30,23 @@ class loginController extends Controller
 
     public function handle(Request $request)
     {
-        $credentials = $request->validate([
+        /*$credentials = $request->validate([
           'login' => 'required'
         ]);
 
+        try {
+            $dbconnect = DB::connection()->getPDO();
+            $dbname = DB::connection()->getDatabaseName();
+            echo "Connected successfully to the database. Database name is :".$dbname;
+         } catch(Exception $e) {
+            echo "Error in connecting to the database";
+         }*/
+         //dd($request->login);
         $user = User::where('login',$request->login)->firstorFail();
+        //dd($user);
         if($user){
             auth()->login($user);
+            
             if(auth()->check()){
                 $login = auth()->user()->login;
                 $name = auth()->user()->name;

@@ -7,11 +7,11 @@
 <table id="example" class="table table-striped" style="width:100%">
   <thead>
       <tr>
-        <th> # </th>
+        <th>#</th>
         <th>User</th>
-        <th>Nombor Pemfailan</th>
-        <th>Tindakan dibuat</th>
-        <th>Tarikh Direkodkan</th>
+        <th>Application Number</th>
+        <th>Action</th>
+        <th>Date</th>
         <th>Status</th>
       </tr>
   </thead>
@@ -32,7 +32,7 @@
         <td>{{ date('d M Y', strtotime($per->created_at)); }}</td>
         <td>
           @if($per->status == 0)
-          Gagal
+          Failed!
           @else
           OK!
           @endif

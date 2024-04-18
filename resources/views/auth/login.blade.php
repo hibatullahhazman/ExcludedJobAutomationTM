@@ -34,7 +34,7 @@
                 @csrf
               <div class="row gy-3 gy-md-4 overflow-hidden">
                 <div class="col-12">
-                  <label for="loginid" class="form-label">Login ID <span class="text-danger">*</span></label>
+                  <label for="login" class="form-label">SPHI ID <span class="text-danger">*</span></label>
                   <div class="input-group">
                     <span class="input-group-text">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
