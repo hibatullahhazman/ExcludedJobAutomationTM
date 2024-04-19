@@ -20,16 +20,12 @@ class MainController extends Controller
         if(session()->has('login')){
         //check data
         $list = excludelist::with('markinfo','definition')
-        ->select('excludeautomation.idproc','excludeautomation.nrproc','mark.denomark','mark.ctryorigin','bbastatusclassif.description','ptoprocedure.tooltips')
-        //->with('bibliomark')
+        ->select('excludeautomation.idproc','excludeautomation.nrproc','mark.denomark','bbastatusclassif.description','ptoprocedure.tooltips')
         ->join('procedures.ptoprocedure','ptoprocedure.idproc','=','excludeautomation.idproc')
-        //->get();
         ->join('bibliomark.mark','excludeautomation.nrproc','=','mark.idapplication')
         ->join('definitions.bbastatusclassif','ptoprocedure.currentstatusid','=','bbastatusclassif.idstatus')
         ->get();
-        //$list = excludelist::all();
         return view('home',compact('list'));
-        //dd($list);
         }
 
         return redirect('login');

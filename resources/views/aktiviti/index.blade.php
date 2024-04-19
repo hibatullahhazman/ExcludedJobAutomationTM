@@ -21,20 +21,19 @@
         <td>{{ $per->id }}</td>
         <td>{{ $per->user }}</td>
         <td>{{ $per->nrproc }}</td>
-        <td><i>
+        <td>
           @if($per->activity_code == 1)
-          Insert 
+          <span class="badge bg-info text-dark">Insert</span> 
           @else
-          Delete
+          <span class="badge bg-danger">Delete</span>
           @endif
-        </i>
         </td>
         <td>{{ date('d M Y', strtotime($per->created_at)); }}</td>
         <td>
           @if($per->status == 0)
           Failed!
           @else
-          OK!
+          <span class="badge bg-success">OK!</span>
           @endif
         </td>
       </tr>

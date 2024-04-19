@@ -16,7 +16,6 @@
         <th> # </th>
         <th>Application Number</th>
         <th>Denomination</th>
-        <th>Applicant/Owner</th>
         <th>Status</th>
         <th>Action</th>
       </tr>
@@ -56,9 +55,6 @@
         </td>
 
         <td>{{ $per->denomark }}</td>
-        <td>
-            <sup>Will be updated soon.</sup>
-        </td>
         <td>{{ $per->description }}</td>
         <td>
             <a href="{{ url('delete/'.$per->nrproc) }}" onclick="return confirm('Are you sure to removed it?');"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
