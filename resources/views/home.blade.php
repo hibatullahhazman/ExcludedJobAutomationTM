@@ -10,7 +10,7 @@
   <p class="alert {{ Session::get('alert-danger', 'alert-danger') }}">{{ Session::get('warning') }}</p>
 @endif
 <div class="d-flex justify-content-center">
-<table id="example" class="table table-striped" style="width:auto;">
+<table id="example" class="table table-striped table-hover" style="width:auto;">
   <thead>
       <tr>
         <th> # </th>
@@ -29,8 +29,8 @@
       <tr>
         <td>{{ $loop->iteration }}</td>
         <td>
-  
-          <a href="#" class="show_user_details" data-bs-toggle="modal" data-bs-target="#UserDetailsModal" data-tooltips="{{ $per->tooltips }}">
+          
+          <a href="#" class="show_user_details btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#UserDetailsModal" data-tooltips="{{ $per->tooltips }}">
                     {{ $per->nrproc }}
           </a>
 
@@ -57,7 +57,7 @@
         <td>{{ $per->denomark }}</td>
         <td>{{ $per->description }}</td>
         <td>
-            <a href="{{ url('delete/'.$per->nrproc) }}" onclick="return confirm('Are you sure to removed it?');"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+            <a href="{{ url('delete/'.$per->nrproc) }}" onclick="return confirm('Are you sure to removed it?');" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
         </td>
       </tr>
         @endforeach

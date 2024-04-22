@@ -4,7 +4,7 @@
         <p class="alert {{ Session::get('alert-success', 'alert-info') }}">{{ Session::get('success') }}</p>
 @endif
 <div class="d-flex justify-content-center">
-<table id="example" class="table table-striped" style="width:100%">
+<table id="example" class="table table-striped table-hover" style="width:100%">
   <thead>
       <tr>
         <th>#</th>

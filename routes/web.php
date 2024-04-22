@@ -19,7 +19,10 @@ use App\Http\Middleware\isLogin;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(session()->has('login')){
+        return redirect('/home');
+    }
+    return redirect('login');
 });
 
 Route::get('/login', [loginController::class, 'show'])->name('login');

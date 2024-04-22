@@ -22,7 +22,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-
+                <h3>{{__('Log In')}}</h3>
+                
                 <div class="text-center mb-5">
                   <a href="#!">
                     <img src="{{ url('https://blog.ipleaders.in/wp-content/uploads/2020/11/trademark_issues.jpg') }}" alt="BootstrapBrain Logo" width="175" height="57">
@@ -52,7 +53,7 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="submit">Log Masuk</button>
+                    <button class="btn btn-primary btn-lg" type="submit">Click here to login</button>
                   </div>
                 </div>
               </div>
