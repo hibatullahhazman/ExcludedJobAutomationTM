@@ -40,16 +40,5 @@ class excludelist extends Model
     {
         return $this->belongsTo(procedures::class, 'nrproc', 'nrproc');
     }
-    
-    public function player(): BelongsTo
-    {
-        return $this->belongsTo(procedures::class, 'idproc', 'idproc');
-    }
-
-    public function customer(): BelongsTo
-    {
-        return $this->belongsTo(procedures::class, 'idcustomer', 'idplayer');
-    }
-
 
 }
