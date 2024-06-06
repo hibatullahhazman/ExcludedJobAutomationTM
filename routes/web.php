@@ -31,7 +31,7 @@ Route::post('/logout',[loginController::class,'logout'])->name('logout');
 
 //Auth::routes();
 Route::get('/home',[MainController::class,'index']);
-Route::get('delete/{nrproc}', [MainController::class, 'destroy']);
+Route::get('delete/{nrproc}', [MainController::class, 'destroy'])->where('nrproc','[A-Za-z0-9_/-]+');
 
 Route::get('/tambah',[MainController::class,'insert']);
 Route::get('tambah/{nrproc}',[MainController::class,'store']);
